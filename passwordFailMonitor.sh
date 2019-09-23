@@ -36,7 +36,7 @@ do
     # Create a line in the output table with the count data and datetime stamp
     OUTPUT="${OUTPUT} \n ${USR} \t ${DATE} \t ${COUNT}"
   fi
-done < <(echo "${PASSWD}")
+done < <(echo "${OUTPUT}")
 
 # Format display of output table to the terminal, aligned as column-seperated table.
 printf "%b" "${HEADER} \n $(printf %b ${OUTPUT} | sort -k 3 -r)" | column -t
